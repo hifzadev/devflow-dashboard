@@ -1,0 +1,20 @@
+{
+  "name": "devflow-ai",
+  "version": "1.0.0",
+  "description": "DevFlow AI — IBM Bob Hackathon 2.0 — AI-powered developer release-readiness workflow assistant",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install && npm --prefix sample-project install",
+    "vercel-build": "npm --prefix backend install && npm --prefix frontend install && npm --prefix sample-project install && npm --prefix frontend run build",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "npm --prefix backend start",
+    "start:frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "test": "npm run test:backend",
+    "test:backend": "npm --prefix backend test",
+    "test:sample": "npm --prefix sample-project test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
