@@ -1,20 +1,21 @@
 {
-  "name": "devflow-ai",
+  "name": "devflow-frontend",
   "version": "1.0.0",
-  "description": "DevFlow AI — IBM Bob Hackathon 2.0 — AI-powered developer release-readiness workflow assistant",
+  "description": "DevFlow AI frontend",
   "private": true,
+  "type": "module",
   "scripts": {
-    "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install && npm --prefix sample-project install",
-    "vercel-build": "npm --prefix backend install && npm --prefix frontend install && npm --prefix sample-project install && npm --prefix frontend run build",
-    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
-    "start:backend": "npm --prefix backend start",
-    "start:frontend": "npm --prefix frontend run dev",
-    "build": "npm --prefix frontend run build",
-    "test": "npm run test:backend",
-    "test:backend": "npm --prefix backend test",
-    "test:sample": "npm --prefix sample-project test"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "@vitejs/plugin-react": "^4.3.3",
+    "vite": "^5.4.11"
   }
 }
